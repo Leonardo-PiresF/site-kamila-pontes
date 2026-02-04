@@ -1,0 +1,383 @@
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de cores baseada nas fotos */
+    --cor-primaria: #8B6F47;
+    /* Marrom médio */
+    --cor-secundaria: #D4C4B0;
+    /* Bege claro */
+    --cor-terciaria: #6B5744;
+    /* Marrom escuro */
+    --cor-destaque: #A0826D;
+    /* Tom terroso */
+    --cor-fundo: #F8F5F1;
+    /* Off-white quente */
+    --cor-fundo-escuro: #2C2420;
+    /* Preto suave */
+    --cor-texto: #3A3330;
+    /* Cinza escuro quente */
+    --cor-texto-claro: #F8F5F1;
+    --cor-card: #FFFFFF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+header#inicio {
+    background: linear-gradient(135deg, var(--cor-fundo-escuro) 0%, var(--cor-terciaria) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-container {
+    max-width: 600px;
+}
+
+.hero-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--cor-secundaria);
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: var(--cor-fundo);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.profissao {
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Seção Sobre */
+#sobre {
+    padding: 100px 20px;
+    background-color: var(--cor-fundo);
+}
+
+#sobre h2 {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.sobre-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sobre-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: var(--cor-texto);
+    text-align: justify;
+}
+
+/* Seção O que faz */
+#o-que-faz {
+    padding: 100px 20px;
+    background-color: #FFFFFF;
+}
+
+#o-que-faz h2 {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto 60px;
+    display: block;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--cor-card);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(139, 111, 71, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(139, 111, 71, 0.2);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: var(--cor-terciaria);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--cor-texto);
+    line-height: 1.7;
+}
+
+/* Seção Especialidades */
+#especialidades {
+    padding: 100px 20px;
+    background-color: var(--cor-fundo);
+}
+
+#especialidades h2 {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+/* Seção Contato */
+#contato {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-terciaria) 100%);
+}
+
+.cta-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cta-box h2 {
+    font-size: 2.5rem;
+    color: var(--cor-terciaria);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.cta-box p {
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+
+.btn-contato {
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 111, 71, 0.3);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-contato:hover {
+    background-color: var(--cor-terciaria);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(139, 111, 71, 0.4);
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    padding: 80px 20px 30px;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+.footer-image {
+    width: 650px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.footer-content {
+    flex: 1;
+}
+
+.footer-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: var(--cor-secundaria);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(212, 196, 176, 0.3);
+}
+
+.copyright p {
+    font-size: 0.95rem;
+    color: var(--cor-secundaria);
+    opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .profissao {
+        font-size: 1.2rem;
+    }
+
+    .hero-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    #sobre h2,
+    #o-que-faz h2,
+    #especialidades h2,
+    .cta-box h2 {
+        font-size: 2rem;
+    }
+
+    .section-image {
+        height: 800px;
+
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    .footer-text {
+        font-size: 1.1rem;
+    }
+
+    .cta-box {
+        padding: 40px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .profissao {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    #sobre,
+    #o-que-faz,
+    #especialidades,
+    #contato {
+        padding: 60px 15px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .btn-contato {
+        padding: 15px 35px;
+        font-size: 1rem;
+    }
+}
+
+.intro-section {
+    display: flex;
+    align-items: center;
+    background: #c2a79400;
+    padding: 60px;
+}
+
+.intro-content {
+    flex: 1;
+    color: #8B6F47;
+    padding-right: 40px;
+}
+
+.intro-image {
+    flex: 1;
+}
+
+.intro-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
