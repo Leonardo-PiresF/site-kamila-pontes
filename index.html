@@ -100,8 +100,27 @@
             </div>
         </header>
 
-        <section class="relative w-full bg-[#f4f3f1] dark:bg-primary transition-colors duration-300" id="home">
-            <div class="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <section class="relative w-full bg-[#f4f3f1] dark:bg-primary transition-colors duration-300 overflow-hidden"
+            id="home">
+
+            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+
+                <img src="image_0.png" alt=""
+                    class="absolute -top-10 -left-10 w-48 opacity-10 dark:opacity-20 -rotate-12 mix-blend-multiply dark:mix-blend-soft-light">
+
+                <img src="image_0.png" alt=""
+                    class="absolute top-1/3 -right-12 w-32 opacity-15 dark:opacity-25 rotate-45 mix-blend-multiply dark:mix-blend-soft-light">
+
+                <img src="image_0.png" alt=""
+                    class="absolute bottom-20 left-1/4 w-20 opacity-10 dark:opacity-20 -rotate-12 -scale-x-100 mix-blend-multiply dark:mix-blend-soft-light">
+
+                <img src="image_0.png" alt=""
+                    class="absolute bottom-10 right-20 w-40 opacity-5 dark:opacity-10 rotate-12 mix-blend-multiply dark:mix-blend-soft-light">
+
+                <img src="image_0.png" alt=""
+                    class="absolute top-20 left-1/3 w-16 opacity-5 dark:opacity-25 rotate-12 -scale-x-100 mix-blend-multiply dark:mix-blend-soft-light">
+            </div>
+            <div class="relative z-10 mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
                 <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
 
                     <div class="flex flex-col justify-center space-y-8">
@@ -131,40 +150,36 @@
                                 Saiba Mais
                             </a>
                         </div>
+
                         <div
                             class="flex items-center gap-4 text-sm text-neutral-500 dark:text-gray-300 pt-4 transition-colors duration-300">
-
                             <div class="flex -space-x-3">
-
-                                <img class="inline-block size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] object-cover"
-                                    src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="Paciente Satisfeita" />
-
-                                <img class="inline-block size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] object-cover"
-                                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="Paciente Satisfeito" />
-
-                                <img class="inline-block size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] object-cover"
-                                    src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="Paciente Satisfeita" />
-
-                                <img class="inline-block size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] object-cover"
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="Paciente Satisfeito" />
-
+                                <div
+                                    class="inline-flex items-center justify-center size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] bg-neutral-200 dark:bg-white/10 text-neutral-500 dark:text-neutral-300 transition-colors">
+                                    <span class="material-symbols-outlined text-xl">person</span>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] bg-neutral-200 dark:bg-white/10 text-neutral-500 dark:text-neutral-300 transition-colors">
+                                    <span class="material-symbols-outlined text-xl">person</span>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] bg-neutral-200 dark:bg-white/10 text-neutral-500 dark:text-neutral-300 transition-colors">
+                                    <span class="material-symbols-outlined text-xl">person</span>
+                                </div>
+                                <div
+                                    class="inline-flex items-center justify-center size-10 rounded-full ring-2 ring-white dark:ring-[#4b5361] bg-neutral-200 dark:bg-white/10 text-neutral-500 dark:text-neutral-300 transition-colors">
+                                    <span class="material-symbols-outlined text-xl">person</span>
+                                </div>
                             </div>
-
                             <p class="font-medium">Junte-se a dezenas de pacientes satisfeitos.</p>
                         </div>
                     </div>
 
                     <div class="relative lg:h-full flex items-center justify-center lg:justify-end">
                         <div
-                            class="relative w-full max-w-[600px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-neutral-200">
-
+                            class="relative w-full max-w-[600px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-neutral-200 z-10">
                             <div class="absolute inset-0 bg-[url('Kamila8.png')] bg-cover bg-center">
                             </div>
-
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent mix-blend-multiply">
                             </div>
@@ -257,7 +272,9 @@
                         diversas demandas emocionais, oferecendo suporte especializado para os desafios que você está
                         enfrentando.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+
                     <div
                         class="group relative overflow-hidden rounded-2xl bg-white dark:bg-primary-dark p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-transparent hover:border-accent-sage/30 dark:hover:border-accent-sage/20">
                         <div
@@ -270,8 +287,8 @@
                             Aprenda a
                             gerenciar sintomas de ansiedade, crises de pânico e o estresse do dia a dia com técnicas
                             eficazes.</p>
-                        </a>
                     </div>
+
                     <div
                         class="group relative overflow-hidden rounded-2xl bg-white dark:bg-primary-dark p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-transparent hover:border-accent-sage/30 dark:hover:border-accent-sage/20">
                         <div
@@ -284,6 +301,7 @@
                             Um espaço
                             de acolhimento para tratar a depressão, resgatando a vitalidade e o sentido da vida.</p>
                     </div>
+
                     <div
                         class="group relative overflow-hidden rounded-2xl bg-white dark:bg-primary-dark p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-transparent hover:border-accent-sage/30 dark:hover:border-accent-sage/20">
                         <div
@@ -297,6 +315,21 @@
                             comunicação, resolva conflitos e construa relações mais saudáveis consigo e com os outros.
                         </p>
                     </div>
+
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-primary-dark p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-transparent hover:border-accent-sage/30 dark:hover:border-accent-sage/20">
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100 dark:bg-white/10 text-purple-600 dark:text-gray-200 mb-6 group-hover:bg-primary dark:group-hover:bg-accent-tan group-hover:text-white dark:group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">looks</span>
+                        </div>
+                        <h4 class="mb-3 text-xl font-bold text-primary dark:text-white transition-colors duration-300">
+                            Atendimento LGBTQIAPN+</h4>
+                        <p class="text-neutral-600 dark:text-gray-400 mb-6 transition-colors duration-300 text-justify">
+                            Terapia acolhedora, focada em questões de identidade de gênero, orientação sexual, aceitação
+                            e superação de preconceitos.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </section>
