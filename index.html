@@ -1,202 +1,464 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kamila Pontes - Acompanhante Terapêutica">
-    <title>Kamila Pontes - Acompanhante Terapêutica</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kamila Pontes - Psicologia Clínica</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b5361",
+                        "primary-dark": "#323842",
+                        "accent-tan": "#968a73",
+                        "accent-sage": "#bcc4b9",
+                        "neutral-blue-grey": "#7b8991",
+                        "neutral-light": "#9aa4aa",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#18191a",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
 </head>
 
-<body>
-    <!-- Hero Section -->
-    <header id="inicio">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo1.png" alt="Logo Kamila Pontes" class="logo-img">
-                <span>Kamila Pontes</span>
-            </div>
-            <div class="menu-btn">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#o-que-faz">Serviços</a></li>
-                <li><a href="#especialidades">Especialidades</a></li>
-                <li><a href="#faq">Dúvidas</a></li>
-                <li><a href="#contato" class="btn-nav">Contato</a></li>
-            </ul>
-        </nav>
+<body
+    class="bg-background-light text-primary font-display antialiased selection:bg-accent-tan selection:text-white dark:bg-primary-dark dark:text-neutral-light transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-        <div class="hero-container-dark">
-            <div class="hero-text">
-                <span class="destaque-topo">Acompanhante Terapêutica</span>
-                <h1>Kamila Pontes</h1>
-                <p>Acolhimento humanizado e suporte especializado para promover autonomia e bem-estar. Conte comigo para
-                    enfrentar os desafios do dia a dia com segurança.</p>
-                <p class="localizacao">Atendimento em Santa Maria da Vitória-BA e Região</p>
+        <header
+            class="sticky top-0 z-50 w-full bg-white/90 dark:bg-primary-dark/95 backdrop-blur-md border-b border-[#e5e7eb] dark:border-white/5 transition-colors duration-300">
+            <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+                <div class="flex h-20 items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <img src="logo K.png" alt="Logo Kamila Pontes" class="h-20 w-auto dark:hidden">
+                        <img src="logo K dark (2).png" alt="Logo Kamila Pontes (Modo Escuro)"
+                            class="h-24 w-auto hidden dark:block">
+                        <div class="flex flex-col">
+                            <h1
+                                class="text-primary dark:text-white text-xl font-bold tracking-tight transition-colors duration-300">
+                                Kamila Pontes</h1>
+                            <span
+                                class="text-xs text-neutral-blue-grey dark:text-neutral-400 uppercase tracking-wider font-medium transition-colors duration-300">Psicóloga
+                                Clínica CRP **/*****</span>
+                        </div>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="nav-link" href="#home">Início</a>
+                        <a class="nav-link" href="#sobre">Sobre Mim</a>
+                        <a class="nav-link" href="#atuacao">Áreas de Atuação</a>
+                        <a class="nav-link" href="#faq">Dúvidas</a>
+                    </nav>
+                    <div class="hidden md:flex items-center gap-4">
+                        <button id="theme-toggle"
+                            class="p-2 rounded-full text-primary dark:text-neutral-light hover:bg-gray-100 dark:hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-tan">
+                            <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                            <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                        </button>
+                        <a class="btn-primary" href="#contato">Agendar</a>
+                    </div>
+                    <button id="mobile-menu-btn"
+                        class="md:hidden flex items-center justify-center p-2 text-primary dark:text-neutral-light hover:text-accent-tan transition-colors">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
 
-                <a href="https://wa.me/5582999999999" target="_blank" class="btn-hero">
-                    Agendar Conversa
-                </a>
+            <div id="mobile-menu"
+                class="hidden md:hidden absolute top-20 left-0 w-full bg-white dark:bg-primary-dark border-b border-gray-200 dark:border-white/5 shadow-lg py-4 px-4 flex-col gap-4 animate-fade-in-down transition-colors duration-300">
+                <a class="mobile-link" href="#home">Início</a>
+                <a class="mobile-link" href="#sobre">Sobre Mim</a>
+                <a class="mobile-link" href="#atuacao">Áreas de Atuação</a>
+                <a class="mobile-link" href="#faq">Dúvidas</a>
+                <button id="theme-toggle-mobile"
+                    class="flex items-center gap-2 w-full p-2 rounded-lg text-primary dark:text-neutral-light hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                    <span class="font-medium">Alternar Tema</span>
+                </button>
+                <a class="btn-primary w-full text-center mt-2" href="#contato">Agendar Consulta</a>
+            </div>
+        </header>
+
+        <section class="relative w-full bg-[#f4f3f1] dark:bg-primary transition-colors duration-300" id="home">
+            <div class="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+                <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+                    <div class="flex flex-col justify-center space-y-8">
+                        <div class="space-y-4">
+                            <div
+                                class="inline-flex items-center rounded-full border border-accent-tan/30 bg-white dark:bg-white/10 px-3 py-1 text-sm text-accent-tan dark:text-accent-tan font-medium shadow-sm w-fit transition-colors duration-300">
+                                <span class="flex h-2 w-2 rounded-full bg-accent-tan mr-2"></span>
+                                Atendimento Presencial em Santa Maria da Vitoria - BA e Online para todo o Brasil
+                            </div>
+                            <h1
+                                class="text-4xl font-extrabold tracking-tight text-primary dark:text-white sm:text-5xl xl:text-6xl transition-colors duration-300">
+                                Psicologia Clínica com <span class="text-accent-tan">Empatia</span> e <span
+                                    class="text-accent-tan">Acolhimento</span>
+                            </h1>
+                            <p
+                                class="max-w-[600px] text-lg text-neutral-600 dark:text-gray-200 md:text-xl leading-relaxed transition-colors duration-300">
+                                Um espaço seguro para sua jornada de autoconhecimento e bem-estar emocional. Encontre o
+                                equilíbrio e a clareza que você precisa.
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a class="btn-primary h-12 px-8 text-base" href="#contato">
+                                Agendar Consulta
+                            </a>
+                            <a class="inline-flex h-12 items-center justify-center rounded-lg border border-primary/20 dark:border-white/30 bg-white dark:bg-white/5 px-8 text-base font-bold text-primary dark:text-white shadow-sm hover:bg-neutral-50 dark:hover:bg-white/10 transition-all"
+                                href="#sobre">
+                                Saiba Mais
+                            </a>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 text-sm text-neutral-500 dark:text-gray-300 pt-4 transition-colors duration-300">
+                            <div class="flex -space-x-2">
+                                <div
+                                    class="size-8 rounded-full bg-gray-200 border-2 border-white dark:border-primary overflow-hidden transition-colors duration-300">
+                                    <div class="w-full h-full bg-gradient-to-br from-accent-tan/50 to-primary/50"></div>
+                                </div>
+                                <div
+                                    class="size-8 rounded-full bg-gray-200 border-2 border-white dark:border-primary overflow-hidden transition-colors duration-300">
+                                    <div
+                                        class="w-full h-full bg-gradient-to-br from-accent-sage/50 to-neutral-blue-grey/50">
+                                    </div>
+                                </div>
+                                <div
+                                    class="size-8 rounded-full bg-gray-200 border-2 border-white dark:border-primary overflow-hidden transition-colors duration-300">
+                                    <div class="w-full h-full bg-gradient-to-br from-neutral-light/50 to-primary/50">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Junte-se a dezenas de pacientes satisfeitos.</p>
+                        </div>
+                    </div>
+                    <div class="relative lg:h-full flex items-center justify-center lg:justify-end">
+                        <div
+                            class="relative w-full max-w-[600px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-neutral-200">
+                            <div class="absolute inset-0 bg-[url('Kamila7.jpeg')] bg-cover bg-center">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent mix-blend-multiply">
+                            </div>
+                        </div>
+                        <div class="absolute -z-10 -bottom-6 -left-6 h-64 w-64 rounded-full bg-accent-sage/30 blur-3xl">
+                        </div>
+                        <div class="absolute -z-10 top-12 -right-6 h-48 w-48 rounded-full bg-accent-tan/20 blur-3xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white dark:bg-primary-dark transition-colors duration-300" id="sobre">
+            <div class="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-12 lg:grid-cols-12 items-center">
+                    <div class="lg:col-span-5 order-2 lg:order-1">
+                        <div
+                            class="relative aspect-[3/4] w-full max-w-sm mx-auto lg:mr-auto rounded-xl overflow-hidden shadow-lg bg-gray-100">
+                            <div class="absolute inset-0 bg-[url('Kamila2.png')] bg-cover bg-center">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6">
+                        <div class="space-y-2">
+                            <h2 class="text-sm font-bold text-accent-tan uppercase tracking-widest">Sobre Mim</h2>
+                            <h3
+                                class="text-3xl font-bold text-primary dark:text-white sm:text-4xl transition-colors duration-300">
+                                Quem é Kamila Pontes?</h3>
+                        </div>
+                        <div
+                            class="space-y-4 text-base text-neutral-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
+                            <p>
+                                Sou psicóloga clínica dedicada a oferecer um espaço de escuta qualificada e livre de
+                                julgamentos. Minha abordagem integra técnicas baseadas
+                                em evidências com um olhar humanizado e profundo.
+                            </p>
+                            <p>
+                                Acredito que cada indivíduo possui uma história única e, portanto, merece um tratamento
+                                personalizado. Meu objetivo é auxiliar você a navegar por suas emoções, compreender seus
+                                padrões de comportamento e construir uma vida com mais significado e leveza.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div
+                                class="flex items-center gap-3 p-4 rounded-lg bg-background-light dark:bg-white/5 transition-colors duration-300">
+                                <span class="material-symbols-outlined text-accent-tan text-3xl">school</span>
+                                <div>
+                                    <p class="font-bold text-primary dark:text-white transition-colors duration-300">
+                                        Especialista</p>
+                                    <p
+                                        class="text-sm text-neutral-500 dark:text-gray-400 transition-colors duration-300">
+                                        Terapia Cognitiva</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 p-4 rounded-lg bg-background-light dark:bg-white/5 transition-colors duration-300">
+                                <span class="material-symbols-outlined text-accent-tan text-3xl">favorite</span>
+                                <div>
+                                    <p class="font-bold text-primary dark:text-white transition-colors duration-300">
+                                        Abordagem</p>
+                                    <p
+                                        class="text-sm text-neutral-500 dark:text-gray-400 transition-colors duration-300">
+                                        Humanizada</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-background-light dark:bg-primary transition-colors duration-300" id="atuacao">
+            <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-sm font-bold text-accent-tan uppercase tracking-widest">Serviços</h2>
+                    <h3
+                        class="text-3xl font-bold text-primary dark:text-white sm:text-4xl transition-colors duration-300">
+                        Como posso te ajudar</h3>
+                    <p class="text-neutral-600 dark:text-gray-200 transition-colors duration-300">Trabalho com
+                        diversas demandas emocionais, oferecendo suporte especializado para os desafios que você está
+                        enfrentando.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-primary-dark p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-transparent hover:border-accent-sage/30 dark:hover:border-accent-sage/20">
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-blue-grey/10 dark:bg-white/10 text-neutral-blue-grey dark:text-gray-200 mb-6 group-hover:bg-primary dark:group-hover:bg-accent-tan group-hover:text-white dark:group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">sentiment_worried</span>
+                        </div>
+                        <h4 class="mb-3 text-xl font-bold text-primary dark:text-white transition-colors duration-300">
+                            Ansiedade e Estresse</h4>
+                        <p class="text-neutral-600 dark:text-gray-400 mb-6 transition-colors duration-300">Aprenda a
+                            gerenciar sintomas de ansiedade, crises de pânico e o estresse do dia a dia com técnicas
+                            eficazes.</p>
+                        </a>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-primary-dark p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-transparent hover:border-accent-sage/30 dark:hover:border-accent-sage/20">
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-xl bg-accent-tan/10 dark:bg-accent-tan/20 text-accent-tan mb-6 group-hover:bg-primary dark:group-hover:bg-accent-tan group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">psychology</span>
+                        </div>
+                        <h4 class="mb-3 text-xl font-bold text-primary dark:text-white transition-colors duration-300">
+                            Depressão</h4>
+                        <p class="text-neutral-600 dark:text-gray-400 mb-6 transition-colors duration-300">Um espaço
+                            de acolhimento para tratar a depressão, resgatando a vitalidade e o sentido da vida.</p>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-primary-dark p-8 shadow-sm transition-all hover:shadow-md hover:-translate-y-1 border border-transparent hover:border-accent-sage/30 dark:hover:border-accent-sage/20">
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-xl bg-accent-sage/20 dark:bg-white/10 text-neutral-600 dark:text-gray-200 mb-6 group-hover:bg-primary dark:group-hover:bg-accent-tan group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">diversity_3</span>
+                        </div>
+                        <h4 class="mb-3 text-xl font-bold text-primary dark:text-white transition-colors duration-300">
+                            Relacionamentos</h4>
+                        <p class="text-neutral-600 dark:text-gray-400 mb-6 transition-colors duration-300">Melhore a
+                            comunicação, resolva conflitos e construa relações mais saudáveis consigo e com os outros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-24 bg-primary dark:bg-primary-dark overflow-hidden transition-colors duration-300"
+            id="faq">
+
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
             </div>
 
-            <div class="hero-img-container">
-                <img src="mila2.png" alt="Kamila Pontes" class="img-hero-main">
-            </div>
-        </div>
-    </header>
+            <div class="relative z-10 mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8">
 
-    <a href="https://wa.me/5582999999999" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-sm font-bold text-accent-tan uppercase tracking-widest">Dúvidas</h2>
+                    <h3 class="text-3xl font-bold text-white sm:text-4xl transition-colors duration-300">Perguntas
+                        Frequentes</h3>
+                    <p class="text-gray-400 transition-colors duration-300">Esclareça os pontos principais sobre o
+                        atendimento.</p>
+                </div>
 
-    <!-- Quem é Kamila -->
-    <section id="sobre">
-        <div class="container">
-            <h2>Quem é Kamila?</h2>
-            <div class="sobre-content">
-                <p>Sou Kamila Pontes, acompanhante terapêutica com formação especializada em apoio e cuidado humanizado.
-                    Minha missão é estar ao lado de pessoas que precisam de suporte emocional, social e prático em
-                    momentos desafiadores de suas vidas.</p>
-                <p>Com uma abordagem acolhedora e respeitosa, trabalho para promover autonomia, bem-estar e qualidade de
-                    vida, sempre respeitando a individualidade e as necessidades de cada pessoa que acompanho.</p>
-                <p>Acredito que o vínculo terapêutico construído com cuidado e dedicação pode ser transformador,
-                    oferecendo segurança e confiança para enfrentar os desafios do dia a dia.</p>
-            </div>
-        </div>
-    </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="bg-white dark:bg-primary p-8 rounded-2xl shadow-lg border-l-4 border-accent-tan transition-colors duration-300">
+                        <div class="flex gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary dark:text-accent-tan text-3xl shrink-0 transition-colors duration-300">payments</span>
+                            <div>
+                                <h4
+                                    class="font-bold text-primary dark:text-white text-lg mb-3 transition-colors duration-300">
+                                    Você atende convênios?</h4>
+                                <p
+                                    class="text-neutral-600 dark:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
+                                    Atendo apenas na modalidade particular. Porém, forneço recibo e relatório detalhado
+                                    para que você possa solicitar o reembolso integral ou parcial junto ao seu plano de
+                                    saúde.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- O que faz um Acompanhante Terapêutico -->
-    <section id="o-que-faz">
-        <div class="intro-section">
-            <div class="intro-content">
-                <h2>O que faz um Acompanhante Terapêutico?</h2>
-                <p>O acompanhante terapêutico é um profissional que atua diretamente no cotidiano de pessoas que
-                    necessitam de suporte especializado. Com uma presença atenta e acolhedora, trabalho para promover
-                    autonomia, bem-estar e qualidade de vida em diferentes contextos e situações.</p>
-            </div>
-            <div class="intro-image">
-                <img src="mila4.png" alt="Kamila Pontes - Acompanhante Terapêutica">
-            </div>
-        </div>
-        <div class="container">
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Apoio no Cotidiano</h3>
-                    <p>Auxílio nas atividades diárias, promovendo autonomia e independência nas rotinas pessoais e
-                        sociais.</p>
-                </div>
-                <div class="card">
-                    <h3>Suporte Emocional</h3>
-                    <p>Ofereço escuta atenta e presença acolhedora em momentos de dificuldade emocional e psicológica.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Mediação Social</h3>
-                    <p>Facilito a interação social e a reinserção em atividades comunitárias, promovendo vínculos
-                        saudáveis.</p>
-                </div>
-                <div class="card">
-                    <h3>Acompanhamento em Tratamentos</h3>
-                    <p>Acompanho consultas médicas, terapias e outros tratamentos, garantindo continuidade do cuidado.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Prevenção de Crises</h3>
-                    <p>Identifico sinais de descompensação e atuo preventivamente, sempre em diálogo com a equipe de
-                        saúde.</p>
-                </div>
-                <div class="card">
-                    <h3>Estímulo à Autonomia</h3>
-                    <p>Trabalho para fortalecer habilidades e capacidades, respeitando o tempo e as possibilidades de
-                        cada pessoa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div
+                        class="bg-white dark:bg-primary p-8 rounded-2xl shadow-lg border-l-4 border-accent-tan transition-colors duration-300">
+                        <div class="flex gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary dark:text-accent-tan text-3xl shrink-0 transition-colors duration-300">timer</span>
+                            <div>
+                                <h4
+                                    class="font-bold text-primary dark:text-white text-lg mb-3 transition-colors duration-300">
+                                    Qual a duração da sessão?</h4>
+                                <p
+                                    class="text-neutral-600 dark:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
+                                    As sessões têm duração média de 50 minutos. A frequência geralmente é semanal, sendo
+                                    fundamental para a eficácia do processo terapêutico e construção do vínculo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Especialidades -->
-    <section id="especialidades">
-        <div class="container">
-            <h2>Especialidades</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Transtornos de Ansiedade</h3>
-                    <p>Acompanhamento especializado para pessoas com transtornos de ansiedade, fobias e síndrome do
-                        pânico.</p>
-                </div>
-                <div class="card">
-                    <h3>Depressão</h3>
-                    <p>Suporte no enfrentamento da depressão, auxiliando na retomada de atividades e resgate da
-                        qualidade de vida.</p>
-                </div>
-                <div class="card">
-                    <h3>Transtorno Bipolar</h3>
-                    <p>Acompanhamento atento às oscilações de humor, promovendo estabilidade e aderência ao tratamento.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Esquizofrenia</h3>
-                    <p>Apoio na organização da rotina, manejo de sintomas e fortalecimento de vínculos sociais.</p>
-                </div>
-                <div class="card">
-                    <h3>Transtornos Alimentares</h3>
-                    <p>Acompanhamento no processo de tratamento, auxiliando na construção de uma relação saudável com a
-                        alimentação.</p>
-                </div>
-                <div class="card">
-                    <h3>Dependência Química</h3>
-                    <p>Suporte no processo de recuperação, prevenção de recaídas e reintegração social.</p>
-                </div>
-                <div class="card">
-                    <h3>Idosos</h3>
-                    <p>Acompanhamento especializado para idosos, respeitando suas histórias e promovendo bem-estar e
-                        dignidade.</p>
-                </div>
-                <div class="card">
-                    <h3>Autismo (TEA)</h3>
-                    <p>Apoio individualizado respeitando as características e necessidades de pessoas no espectro
-                        autista.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div
+                        class="bg-white dark:bg-primary p-8 rounded-2xl shadow-lg border-l-4 border-accent-tan transition-colors duration-300">
+                        <div class="flex gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary dark:text-accent-tan text-3xl shrink-0 transition-colors duration-300">videocam</span>
+                            <div>
+                                <h4
+                                    class="font-bold text-primary dark:text-white text-lg mb-3 transition-colors duration-300">
+                                    Como funciona o online?</h4>
+                                <p
+                                    class="text-neutral-600 dark:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
+                                    O atendimento online acontece por videochamada (Google Meet), mantendo o mesmo
+                                    sigilo e ética do presencial. É ideal para quem busca flexibilidade ou reside em
+                                    outras cidades.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Call to Action -->
-    <section id="contato">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Vamos Conversar?</h2>
-                <p>Entre em contato para agendar uma conversa inicial e conhecer melhor como o acompanhamento
-                    terapêutico pode ajudar você ou alguém que você ama.</p>
-                <a href="https://wa.me/5582999999999" class="btn-contato" target="_blank">Entrar em Contato</a>
+                    <div
+                        class="bg-white dark:bg-primary p-8 rounded-2xl shadow-lg border-l-4 border-accent-tan transition-colors duration-300">
+                        <div class="flex gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary dark:text-accent-tan text-3xl shrink-0 transition-colors duration-300">pix</span>
+                            <div>
+                                <h4
+                                    class="font-bold text-primary dark:text-white text-lg mb-3 transition-colors duration-300">
+                                    Formas de pagamento?</h4>
+                                <p
+                                    class="text-neutral-600 dark:text-gray-300 text-sm leading-relaxed transition-colors duration-300">
+                                    O pagamento pode ser realizado via PIX ou transferência bancária antes de cada
+                                    sessão. Também ofereço a opção de pacotes mensais com valor diferenciado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <p class="text-gray-300 transition-colors duration-300 mb-6">Sua dúvida não está aqui?</p>
+                    <a class="inline-flex h-12 items-center justify-center rounded-lg bg-white dark:bg-white px-8 text-base font-bold text-primary dark:text-primary shadow-lg hover:bg-[#25d366] dark:hover:bg-[#25d366] hover:text-white dark:hover:text-white transition-all transform hover:-translate-y-1"
+                        href="https://wa.me/seu_numero" target="_blank">
+                        Falar no WhatsApp <span class="material-symbols-outlined ml-2 text-sm">chat</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <footer class="bg-primary text-white pt-20 pb-10 transition-colors duration-300" id="contato">
+            <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+
+                    <div class="space-y-4"> <img src="logo dark limpo.png" alt="Logo Kamila Pontes"
+                            class="h-36 w-auto object-contain rounded-xl">
+
+                        <p class="text-neutral-400 text-sm leading-relaxed">
+                            Psicologia Clínica focada em promover saúde mental e qualidade de vida através de um
+                            atendimento ético e humanizado.
+                        </p>
+
+                        <div class="flex gap-4 pt-2"> <a
+                                class="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-accent-tan transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-white text-sm">alternate_email</span>
+                            </a>
+                            <a class="flex items-center justify-center size-10 rounded-full bg-white/10 hover:bg-accent-tan transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-white text-sm">photo_camera</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-6">Menu</h3>
+                        <ul class="space-y-4">
+                            <li><a class="text-neutral-400 hover:text-accent-tan transition-colors text-sm"
+                                    href="#home">Início</a></li>
+                            <li><a class="text-neutral-400 hover:text-accent-tan transition-colors text-sm"
+                                    href="#sobre">Sobre Mim</a></li>
+                            <li><a class="text-neutral-400 hover:text-accent-tan transition-colors text-sm"
+                                    href="#atuacao">Áreas de Atuação</a></li>
+                            <li><a class="text-neutral-400 hover:text-accent-tan transition-colors text-sm"
+                                    href="#faq">Dúvidas</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-6">Contato</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-neutral-400 text-sm">
+                                <span class="material-symbols-outlined text-accent-tan shrink-0">location_on</span>
+                                <span>Santa Maria da Vitória, Bahia</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-neutral-400 text-sm">
+                                <span class="material-symbols-outlined text-accent-tan shrink-0">call</span>
+                                <span>(77) 98813-6034</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-neutral-400 text-sm">
+                                <span class="material-symbols-outlined text-accent-tan shrink-0">mail</span>
+                                <span>contato@kamilapontes.com.br</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-6">Localização</h3>
+                        <div class="w-full h-40 rounded-lg bg-neutral-800 overflow-hidden relative"
+                            data-location="Santa Maria da Vitória, Bahia">
+                            <div
+                                class="absolute inset-0 bg-[url('logo dark.jpeg')] bg-cover bg-center grayscale opacity-50 hover:opacity-75 transition-opacity">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-neutral-500 text-sm">© 2026 Kamila Pontes. Todos os direitos reservados.</p>
+                    <p class="text-neutral-500 text-sm">CRP **/*****</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
-</body>
-
-<!-- Footer com imagem e CTA final -->
-<footer>
-    <div class="footer-container">
-        <img src="mila3.png" alt="Kamila Pontes" class="footer-image">
-        <div class="footer-content">
-            <p class="footer-text">Se você está em dúvida ou não sabe se o acompanhamento terapêutico é o que
-                precisa neste momento, podemos conversar com calma.</p>
-            <a href="https://wa.me/5582999999999" class="btn-contato" target="_blank">Entre em Contato</a>
-        </div>
-    </div>
-    <div class="copyright">
-        <p>&copy; 2026 Kamila Pontes - Acompanhante Terapêutica. Todos os direitos reservados.</p>
-    </div>
-</footer>
 </body>
 
 </html>

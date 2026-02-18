@@ -1,51 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Menu Mobile
-    const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const btnMenu = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconMenu = btnMenu.querySelector('.material-symbols-outlined');
+    const links = menu.querySelectorAll('a');
 
-    if (menuBtn) {
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.classList.toggle('toggle');
+    btnMenu.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        iconMenu.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            iconMenu.textContent = 'menu';
         });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            menu.classList.add('hidden');
+            iconMenu.textContent = 'menu';
+        }
+    });
+
+    const themeToggleDesktop = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const htmlElement = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+    } else {
+        htmlElement.classList.remove('dark');
     }
 
-    // Fechar menu ao clicar em um link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuBtn.classList.remove('toggle');
-        });
-    });
+    function toggleTheme() {
+        if (htmlElement.classList.contains('dark')) {
+            htmlElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        } else {
+            htmlElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        }
+    }
 
-    // 2. Animação de Scroll (Intersection Observer)
-    const observerOptions = {
-        threshold: 0.15 // Dispara quando 15% do elemento estiver visível
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    // Seleciona todos os elementos que queremos animar
-    const animatedElements = document.querySelectorAll('.card, h2, .sobre-content, .intro-content, .intro-image, .faq-item, #faq h2');
-    animatedElements.forEach(el => observer.observe(el));
-
-    // 3. Accordion (FAQ) - Vamos criar essa seção jaja
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            // Fecha outros abertos (opcional)
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) otherItem.classList.remove('active');
-            });
-            item.classList.toggle('active');
-        });
-    });
+    if (themeToggleDesktop) {
+        themeToggleDesktop.addEventListener('click', toggleTheme);
+    }
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('click', toggleTheme);
+    }
 });
