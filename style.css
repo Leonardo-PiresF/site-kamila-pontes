@@ -752,6 +752,11 @@ h4 {
     object-position: 50% 22%;
 }
 
+/* foto de corpo inteiro no chão: enquadra mais embaixo para não cortar os brinquedos */
+.split-media--soft img {
+    object-position: 50% 65%;
+}
+
 /* Painel decorativo usado onde ainda não há fotografia */
 .media-panel {
     position: relative;
